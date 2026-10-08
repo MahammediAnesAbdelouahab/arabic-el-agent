@@ -1,6 +1,7 @@
 # Evidence, Not Doubt: Self-Verification in LLM-Based Arabic Entity Linking to Wikidata
 
 <!-- DOI_BADGE -->
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23239230.svg)](https://doi.org/10.5281/zenodo.23239230)
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/MahammediAnesAbdelouahab/arabic-el-agent/blob/main/notebooks/reproduce_and_run.ipynb)
 [![Code license: MIT](https://img.shields.io/badge/code-MIT-blue.svg)](LICENSE)
 [![Data license: CC BY 4.0](https://img.shields.io/badge/data-CC%20BY%204.0-lightgrey.svg)](data/LICENSE)
@@ -116,6 +117,8 @@ python scripts/reproduce_tables.py      # writes results/tables/*.csv
 | `unclear` | 12 | the reviewer could not decide; excluded from all scores |
 
 ## Citation
+Archived on Zenodo: [10.5281/zenodo.23239230](https://doi.org/10.5281/zenodo.23239230).
+
 Please cite this repository using [`CITATION.cff`](CITATION.cff) (GitHub: “Cite this repository”).
 
 
