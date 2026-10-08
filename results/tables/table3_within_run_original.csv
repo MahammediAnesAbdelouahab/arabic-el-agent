@@ -1,0 +1,8 @@
+,n,initial_accuracy,accuracy,fixed,broken,sign_test_p,avg_llm_calls
+critic_only,850,0.8671,0.7976,9,68,0.0,2.6224
+full_no_memory,850,0.8635,0.8741,9,0,0.003906,1.3353
+full_no_memory@qwen3-4b-instruct-2507-q4_K_M,850,0.8447,0.8459,8,7,1.0,1.28
+full_no_memory@r2,850,0.86,0.8706,9,0,0.003906,1.3376
+full_plus_role,850,0.8659,0.8718,9,4,0.266846,1.5176
+grounded_only,850,0.8576,0.8671,8,0,0.007812,1.2447
+llm_plus_nil_rule,850,0.86,0.8788,16,0,3.1e-05,1.2024

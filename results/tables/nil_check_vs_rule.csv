@@ -1,0 +1,14 @@
+,value
+NIL check fired,22.0
+agent kept NIL,8.0
+"  kept NIL, NIL right and rule wrong",2.0
+"  kept NIL, rule right and agent wrong",5.0
+"  kept NIL, both wrong",1.0
+"  kept NIL, both right",0.0
+agent switched to an entity,14.0
+  switched to the rule's candidate,13.0
+agent right (of fired),13.0
+rule right (of fired),16.0
+"agent right, rule wrong",2.0
+"rule right, agent wrong",5.0
+exact sign test p,0.453125

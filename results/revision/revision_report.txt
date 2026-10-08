@@ -1,0 +1,369 @@
+elagent 1.1.0 | 2026-10-05 17:13
+
+=== NIL check vs fixed rule (original labels) ===
+{
+ "NIL check fired": 24,
+ "agent kept NIL": 9,
+ "  kept NIL, NIL right and rule wrong": 0,
+ "  kept NIL, rule right and agent wrong": 6,
+ "  kept NIL, both wrong": 3,
+ "  kept NIL, both right": 0,
+ "agent switched to an entity": 15,
+ "  switched to the rule's candidate": 13,
+ "agent right (of fired)": 8,
+ "rule right (of fired)": 14,
+ "agent right, rule wrong": 0,
+ "rule right, agent wrong": 6,
+ "exact sign test p": 0.03125
+}
+
+=== NIL check vs fixed rule (corrected labels) ===
+{
+ "NIL check fired": 22,
+ "agent kept NIL": 8,
+ "  kept NIL, NIL right and rule wrong": 2,
+ "  kept NIL, rule right and agent wrong": 3,
+ "  kept NIL, both wrong": 3,
+ "  kept NIL, both right": 0,
+ "agent switched to an entity": 14,
+ "  switched to the rule's candidate": 13,
+ "agent right (of fired)": 9,
+ "rule right (of fired)": 10,
+ "agent right, rule wrong": 2,
+ "rule right, agent wrong": 3,
+ "exact sign test p": 1.0
+}
+
+=== NIL check cases (corrected labels) ===
+          id                      mention        gold  initial      final       rule                  exact_matches  agent_kept_nil  agent_right  rule_right  same_answer
+0   337626-0                       ليري‎‎     Q679586      NIL    Q679586    Q679586                        Q679586           False        False       False         True
+1   416500-0                      ياسمينة    Q3571907      NIL        NIL   Q3571907             Q3571907|Q68168207            True        False        True        False
+2   278095-0                       تبهوين   Q23783266      NIL  Q23783266  Q23783266                      Q23783266           False         True        True         True
+3   532835-1                         2021         NIL   Q49628     Q49628     Q49628               Q49628|Q19241643           False        False       False         True
+4   153805-0  الفتح الإسلامي لمحافظة فارس   Q18207020      NIL  Q18207020  Q18207020                      Q18207020           False         True        True         True
+5   151526-0        قانون الخدمة البريدية   Q16983692      NIL  Q16983692  Q16983692                      Q16983692           False         True        True         True
+6   376737-0                        شريفة    Q2972083      NIL        NIL   Q2972083                       Q2972083            True        False        True        False
+7   301431-0                       الحاسي    Q3049956      NIL        NIL   Q3049963   Q3049963|Q3049956|Q106016230            True        False       False        False
+8   360890-0                    آرمسترونغ     Q689169      NIL        NIL    Q966822      Q966822|Q2745103|Q2461290            True        False       False        False
+9   364813-0                     مون شيرى    Q1588515      NIL   Q1588515   Q1588515                       Q1588515           False         True        True         True
+10  385590-0                         زينة   Q25691713      NIL   Q8068578   Q8068578                       Q8068578           False        False       False         True
+11  263032-0                      العناصر   Q98119095      NIL  Q28883896  Q28917554  Q28917554|Q98119095|Q28883896           False        False       False        False
+12  349973-0                          زيل   Q22907300      NIL        NIL    Q638156    Q638156|Q37569944|Q22907300            True        False       False        False
+13  274676-0           كومنز:أطلس الجزائر     Q130135      NIL        NIL    Q130135                        Q130135            True         True       False        False
+14  162979-0           الغزو الآشوري لمصر   Q97357417      NIL  Q97357417  Q97357417                      Q97357417           False         True        True         True
+15  293124-0               دائرة المحمدية    Q3019814      NIL        NIL   Q3019814                       Q3019814            True        False        True        False
+16  197941-0                       قيرغيز     Q484479      NIL    Q484479    Q484479                        Q484479           False         True        True         True
+17  529474-1                         2018         NIL   Q25291     Q25291     Q25291               Q25291|Q12681715           False        False       False         True
+18    7113-0                        الراي  Q108981539  Q839029    Q839029    Q839029                        Q839029           False        False       False         True
+19  247330-0                        بياري   Q13562131      NIL        NIL  Q13562131                      Q13562131            True         True       False        False
+20  508293-1                         2017         NIL   Q25290     Q25290     Q25290     Q25290|Q12681718|Q19057784           False        False       False         True
+21  169356-0                   رصاص مطاطي     Q913345      NIL    Q913345    Q913345                        Q913345           False         True        True         True
+
+=== LLM + fixed NIL rule vs agent (original labels) ===
+                        n accuracy initial_accuracy fixed broken sign_test_p wins_vs_ref losses_vs_ref  p_vs_ref  diff_vs_ref_95CI avg_llm_calls
+baseline_search_top1  850     0.86             0.86     0      0         1.0          35            35       1.0  [-0.019, +0.020]           0.0
+llm_no_correction     850     0.86             0.86     0      0         1.0           0             0       1.0  [+0.000, +0.000]        1.2024
+llm_plus_nil_rule     850   0.8788             0.86    16      0    0.000031          16             0  0.000031  [+0.011, +0.028]        1.2024
+full_no_memory        850   0.8741           0.8635     9      0    0.003906          14             2  0.004181  [+0.006, +0.024]        1.3353
+
+=== LLM + fixed NIL rule vs agent (corrected labels; the rule's new answers are judged in section I) ===
+                        n accuracy initial_accuracy fixed broken sign_test_p wins_vs_ref losses_vs_ref  p_vs_ref  diff_vs_ref_95CI avg_llm_calls
+baseline_search_top1  842     0.88             0.88     0      0         1.0          32            40  0.409579  [-0.030, +0.010]           0.0
+llm_no_correction     842   0.8895           0.8895     0      0         1.0           0             0       1.0  [+0.000, +0.000]        1.2007
+llm_plus_nil_rule     842    0.899           0.8895    11      3    0.057373          11             3  0.057373  [+0.001, +0.019]        1.2007
+full_no_memory        842    0.899           0.8907     8      1    0.039062          12             4  0.076813  [+0.001, +0.019]         1.331
+
+=== By script (original labels) ===
+                               n accuracy initial_accuracy fixed broken
+script run                                                             
+arabic baseline_search_top1  838   0.8628           0.8628     0      0
+       llm_no_correction     838   0.8616           0.8616     0      0
+       full_no_memory        838   0.8747           0.8652     8      0
+       full_plus_role        838   0.8711           0.8675     7      4
+latin  baseline_search_top1    8    0.625            0.625     0      0
+       llm_no_correction       8    0.625            0.625     0      0
+       full_no_memory          8     0.75            0.625     1      0
+       full_plus_role          8    0.875            0.625     2      0
+mixed  baseline_search_top1    4     0.75             0.75     0      0
+       llm_no_correction       4      1.0              1.0     0      0
+       full_no_memory          4      1.0              1.0     0      0
+       full_plus_role          4      1.0              1.0     0      0
+
+=== By script (corrected labels) ===
+                               n accuracy initial_accuracy fixed broken
+script run                                                             
+arabic baseline_search_top1  831   0.8821           0.8821     0      0
+       llm_no_correction     831   0.8905           0.8905     0      0
+       full_no_memory        831   0.8989           0.8917     7      1
+       full_plus_role        831   0.8965           0.8941     6      4
+latin  baseline_search_top1    7   0.7143           0.7143     0      0
+       llm_no_correction       7   0.7143           0.7143     0      0
+       full_no_memory          7   0.8571           0.7143     1      0
+       full_plus_role          7   0.8571           0.7143     1      0
+mixed  baseline_search_top1    4     0.75             0.75     0      0
+       llm_no_correction       4      1.0              1.0     0      0
+       full_no_memory          4      1.0              1.0     0      0
+       full_plus_role          4      1.0              1.0     0      0
+
+=== Mentions per script in the test set ===
+arabic    838
+latin       8
+mixed       4
+
+=== Wrong NIL labels: was the accepted item created before the dataset's publication (2025-06-25)? ===
+{
+ "item existed before cutoff": 21
+}
+
+=== Wrong NIL labels with creation dates ===
+          id mention   accepted               created    earliest                      status
+0   529834-1    2015      Q2002      Q2002:2012-10-31  2012-10-31  item existed before cutoff
+1   475178-1    2022     Q49625     Q49625:2012-11-14  2012-11-14  item existed before cutoff
+2   459206-1    1990      Q2064      Q2064:2012-10-31  2012-10-31  item existed before cutoff
+3   532198-1    2022     Q49625     Q49625:2012-11-14  2012-11-14  item existed before cutoff
+4   453626-1    1986      Q2430      Q2430:2012-10-31  2012-10-31  item existed before cutoff
+5   495681-1    2013      Q1998      Q1998:2012-10-31  2012-10-31  item existed before cutoff
+6   475227-1    2022     Q49625     Q49625:2012-11-14  2012-11-14  item existed before cutoff
+7   468049-1    1983      Q2434      Q2434:2012-10-31  2012-10-31  item existed before cutoff
+8   495299-1    2009      Q1996      Q1996:2012-10-31  2012-10-31  item existed before cutoff
+9   497527-1    2017     Q25290     Q25290:2012-11-11  2012-11-11  item existed before cutoff
+10  494796-1    2011      Q1994      Q1994:2012-10-31  2012-10-31  item existed before cutoff
+11  527000-1    2001      Q1988      Q1988:2012-10-31  2012-10-31  item existed before cutoff
+12  496585-1    2011      Q1994      Q1994:2012-10-31  2012-10-31  item existed before cutoff
+13  456468-1    2012      Q1990      Q1990:2012-10-31  2012-10-31  item existed before cutoff
+14  457663-1    2005      Q2019      Q2019:2012-10-31  2012-10-31  item existed before cutoff
+15  496207-1    2015  Q11187127  Q11187127:2013-04-16  2013-04-16  item existed before cutoff
+16  472480-1    2014      Q1999      Q1999:2012-10-31  2012-10-31  item existed before cutoff
+17  470369-1    2002      Q1987      Q1987:2012-10-31  2012-10-31  item existed before cutoff
+18  495352-1    2010      Q1995      Q1995:2012-10-31  2012-10-31  item existed before cutoff
+19  454547-1    2015      Q2002      Q2002:2012-10-31  2012-10-31  item existed before cutoff
+20  471605-1    2009      Q1996      Q1996:2012-10-31  2012-10-31  item existed before cutoff
+
+=== Retrieval-matched baselines (raw) ===
+                               n  accuracy  initial_accuracy  fixed (wrong→right)  broken (right→wrong)  sign_test_p (fixed vs broken)  acc_non_nil  candidate_recall  acc_when_gold_in_candidates  nil_precision  nil_recall  flagged_rate  acc_unflagged  acc_flagged  avg_llm_calls  avg_seconds  errors (excluded)
+baseline_popularity        850.0    0.2141            0.2141                  0.0                   0.0                            1.0       0.2289            0.9723                       0.2354            0.0         0.0           0.0         0.2141          NaN            0.0          0.0                0.0
+baseline_exact_popularity  850.0    0.8106            0.8106                  0.0                   0.0                            1.0       0.8667            0.9723                       0.8913            0.0         0.0           0.0         0.8106          NaN            0.0          0.0                0.0
+
+=== New configurations (raw, original labels) ===
+                   n  accuracy  initial_accuracy  fixed (wrong→right)  broken (right→wrong)  sign_test_p (fixed vs broken)  acc_non_nil  candidate_recall  acc_when_gold_in_candidates  nil_precision  nil_recall  flagged_rate  acc_unflagged  acc_flagged  avg_llm_calls  avg_seconds  errors (excluded)
+critic_only    850.0    0.7976            0.8671                  9.0                  68.0                       0.000000       0.8453            0.9799                       0.8626         0.0698      0.1091        0.0376         0.8227       0.1562         2.6224       3.2682                0.0
+grounded_only  850.0    0.8671            0.8576                  8.0                   0.0                       0.007812       0.9270            0.9799                       0.9461         0.0000      0.0000        0.0000         0.8671          NaN         1.2447       1.5724                0.0
+
+=== Repeated run llm_no_correction@r2 (raw, original labels) ===
+                          n  accuracy  initial_accuracy  fixed (wrong→right)  broken (right→wrong)  sign_test_p (fixed vs broken)  acc_non_nil  candidate_recall  acc_when_gold_in_candidates  nil_precision  nil_recall  flagged_rate  acc_unflagged  acc_flagged  avg_llm_calls  avg_seconds  errors (excluded)
+llm_no_correction@r2  850.0    0.8624            0.8624                  0.0                   0.0                            1.0        0.922            0.9799                       0.9409            0.0         0.0           0.0         0.8624          NaN         1.2012        1.438                0.0
+
+=== Repeated run full_no_memory@r2 (raw, original labels) ===
+                       n  accuracy  initial_accuracy  fixed (wrong→right)  broken (right→wrong)  sign_test_p (fixed vs broken)  acc_non_nil  candidate_recall  acc_when_gold_in_candidates  nil_precision  nil_recall  flagged_rate  acc_unflagged  acc_flagged  avg_llm_calls  avg_seconds  errors (excluded)
+full_no_memory@r2  850.0    0.8706              0.86                  9.0                   0.0                       0.003906       0.9296            0.9811                       0.9474         0.0556      0.0182           0.0         0.8706          NaN         1.3376       1.4774                0.0
+
+=== Repairs/breaks resting on initial answers the reviewer never saw (before re-review) ===
+                fixed  fixed_unseen_initial  fixed_not_reviewed  broken  broken_unseen_initial  broken_not_reviewed
+full_no_memory      8                     0                   0       1                      0                    0
+full_plus_role      7                     0                   0       4                      0                    0
+
+=== Label review summary (after revision) ===
+             rows reviewed gold wrong gold wrong rate            95% CI
+gold NIL       55       54         53          0.9815  (0.9023, 0.9967)
+disagreement  651      640         39          0.0609  (0.0449, 0.0822)
+audit          40       40          0             0.0     (0.0, 0.0876)
+
+=== Inter-annotator agreement (A after revision vs B) ===
+{
+ "rows": 56,
+ "exact agreement": 0.8929,
+ "option judgements": 152,
+ "observed agreement": 0.9408,
+ "cohen_kappa": 0.8757
+}
+
+=== All systems, first run (original labels) ===
+                             n accuracy initial_accuracy fixed broken sign_test_p wins_vs_ref losses_vs_ref  p_vs_ref  diff_vs_ref_95CI avg_llm_calls
+baseline_exact_popularity  850   0.8106           0.8106     0      0         1.0          34            76  0.000077  [-0.073, -0.026]           0.0
+baseline_popularity        850   0.2141           0.2141     0      0         1.0           9           558       0.0  [-0.678, -0.611]           0.0
+baseline_search_top1       850     0.86             0.86     0      0         1.0          35            35       1.0  [-0.019, +0.020]           0.0
+critic_only                850   0.7976           0.8671     9     68         0.0          12            65       0.0  [-0.082, -0.042]        2.6224
+full_no_memory             850   0.8741           0.8635     9      0    0.003906          14             2  0.004181  [+0.006, +0.024]        1.3353
+full_plus_role             850   0.8718           0.8659     9      4    0.266846          16             6  0.052479  [+0.001, +0.022]        1.5176
+grounded_only              850   0.8671           0.8576     8      0    0.007812          10             4  0.179565  [-0.001, +0.015]        1.2447
+llm_no_correction          850     0.86             0.86     0      0         1.0           0             0       1.0  [+0.000, +0.000]        1.2024
+llm_plus_nil_rule          850   0.8788             0.86    16      0    0.000031          16             0  0.000031  [+0.011, +0.028]        1.2024
+
+=== All systems, first run (corrected labels) ===
+                             n accuracy initial_accuracy fixed broken sign_test_p wins_vs_ref losses_vs_ref  p_vs_ref  diff_vs_ref_95CI avg_llm_calls
+baseline_exact_popularity  838    0.858            0.858     0      0         1.0          29            88       0.0  [-0.095, -0.047]           0.0
+baseline_popularity        838   0.2804           0.2804     0      0         1.0          11           554       0.0  [-0.680, -0.613]           0.0
+baseline_search_top1       838   0.9117           0.9117     0      0         1.0          31            45  0.135385  [-0.037, +0.004]           0.0
+critic_only                838   0.8532           0.9308     8     73         0.0           9            72       0.0  [-0.097, -0.055]        2.6026
+full_no_memory             838   0.9368           0.9296     8      2    0.109375          12             5  0.143463  [-0.001, +0.018]        1.3302
+full_plus_role             838   0.9344            0.932     6      4    0.753906          12             7  0.359283  [-0.004, +0.017]        1.5115
+grounded_only              838   0.9296           0.9236     6      1       0.125           7             6       1.0  [-0.007, +0.011]        1.2411
+llm_no_correction          838   0.9284           0.9284     0      0         1.0           0             0       1.0  [+0.000, +0.000]        1.1993
+llm_plus_nil_rule          838   0.9403           0.9284    13      3    0.021271          13             3  0.021271  [+0.004, +0.021]        1.1993
+
+=== Open-weights model @qwen3-4b-instruct-2507-q4_K_M (corrected labels) ===
+                                                n accuracy initial_accuracy fixed broken sign_test_p wins_vs_ref losses_vs_ref p_vs_ref  diff_vs_ref_95CI avg_llm_calls
+full_no_memory@qwen3-4b-instruct-2507-q4_K_M  838   0.9045           0.8962    11      4    0.118469           0             0      1.0  [+0.000, +0.000]        1.2765
+
+=== Repeated runs: one row per run (corrected labels) ===
+     n  accuracy  initial_accuracy  fixed  broken  sign_test_p  wins_vs_ref  losses_vs_ref  p_vs_ref  avg_llm_calls             system      run  diff_vs_ref
+0  838    0.9284            0.9284      0       0     1.000000            0              0  1.000000         1.1993  llm_no_correction  (first)       0.0000
+1  838    0.9368            0.9296      8       2     0.109375           12              5  0.143463         1.3302     full_no_memory  (first)       0.0084
+2  838    0.8532            0.9308      8      73     0.000000            9             72  0.000000         2.6026        critic_only  (first)      -0.0752
+3  838    0.9296            0.9236      6       1     0.125000            7              6  1.000000         1.2411      grounded_only  (first)       0.0012
+4  838    0.9284            0.9284      0       0     1.000000            0              0  1.000000         1.1981  llm_no_correction      @r2       0.0000
+5  838    0.9344            0.9284      7       2     0.179688           11              6  0.332306         1.3325     full_no_memory      @r2       0.0060
+
+=== Repeated runs: summary (corrected labels) ===
+                   runs  acc_mean  acc_sd  acc_min  acc_max  diff_vs_ref_mean  diff_vs_ref_sd  fixed_total  broken_total   calls
+system                                                                                                                          
+critic_only           1    0.8532     NaN   0.8532   0.8532           -0.0752             NaN            8            73  2.6026
+full_no_memory        2    0.9356  0.0017   0.9344   0.9368            0.0072          0.0017           15             4  1.3314
+grounded_only         1    0.9296     NaN   0.9296   0.9296            0.0012             NaN            6             1  1.2411
+llm_no_correction     2    0.9284  0.0000   0.9284   0.9284            0.0000          0.0000            0             0  1.1987
+
+=== LLM-only accuracy = first answer of every run (corrected labels) ===
+                        n initial_accuracy accuracy fixed broken sign_test_p
+critic_only           838           0.9308   0.8532     8     73         0.0
+full_no_memory        838           0.9296   0.9368     8      2    0.109375
+full_no_memory@r2     838           0.9284   0.9344     7      2    0.179688
+full_plus_role        838            0.932   0.9344     6      4    0.753906
+grounded_only         838           0.9236   0.9296     6      1       0.125
+llm_no_correction     838           0.9284   0.9284     0      0         1.0
+llm_no_correction@r2  838           0.9284   0.9284     0      0         1.0
+
+=== LLM-only run-to-run spread over these runs (corrected labels) ===
+count    7.0000
+mean     0.9287
+std      0.0027
+min      0.9236
+25%      0.9284
+50%      0.9284
+75%      0.9302
+max      0.9320
+
+=== What each check did in full_no_memory (corrected labels) ===
+           fired  fired_first  changed_answer  fixed  broken  kept_right  still_wrong  fix_rate  break_rate
+NIL           22           18              10      7       0           6            9     0.318       0.000
+COHERENCE     15           15               4      1       2          10            2     0.067       0.133
+TYPE          12           12               0      0       0          11            1     0.000       0.000
+LABEL          3            0               0      0       0           2            1     0.000       0.000
+
+=== What each check did in grounded_only (corrected labels) ===
+       fired  fired_first  changed_answer  fixed  broken  kept_right  still_wrong  fix_rate  break_rate
+NIL       23           23              10      6       1           2           14     0.261       0.043
+TYPE      12           12               0      0       0          11            1     0.000       0.000
+LABEL      3            0               0      0       0           2            1     0.000       0.000
+
+=== What each check did in critic_only (corrected labels) ===
+        fired  fired_first  changed_answer  fixed  broken  kept_right  still_wrong  fix_rate  break_rate
+CRITIC    117          117              86      8      73          26           10     0.068       0.624
+
+=== What each check did in full_plus_role (corrected labels) ===
+           fired  fired_first  changed_answer  fixed  broken  kept_right  still_wrong  fix_rate  break_rate
+NIL           29           18              12      6       3           9           11     0.207       0.103
+COHERENCE     18           18               1      0       0          16            2     0.000       0.000
+TYPE          13           12               1      0       1          11            1     0.000       0.077
+ROLE           4            4               4      0       4           0            0     0.000       1.000
+LABEL          3            0               0      0       0           2            1     0.000       0.000
+
+=== NIL check vs fixed rule (corrected labels, after revision) ===
+{
+ "NIL check fired": 22,
+ "agent kept NIL": 8,
+ "  kept NIL, NIL right and rule wrong": 2,
+ "  kept NIL, rule right and agent wrong": 5,
+ "  kept NIL, both wrong": 1,
+ "  kept NIL, both right": 0,
+ "agent switched to an entity": 14,
+ "  switched to the rule's candidate": 13,
+ "agent right (of fired)": 13,
+ "rule right (of fired)": 16,
+ "agent right, rule wrong": 2,
+ "rule right, agent wrong": 5,
+ "exact sign test p": 0.453125
+}
+
+=== Repairs/breaks resting on unseen initial answers (after re-review) ===
+                fixed  fixed_unseen_initial  fixed_not_reviewed  broken  broken_unseen_initial  broken_not_reviewed
+critic_only         8                     0                   0      73                      0                    0
+full_no_memory      8                     0                   0       2                      0                    0
+full_plus_role      6                     0                   0       4                      0                    0
+grounded_only       6                     0                   0       1                      0                    0
+
+=== By script (corrected labels) ===
+                                    n accuracy initial_accuracy fixed broken
+script run                                                                  
+arabic baseline_exact_popularity  827   0.8609           0.8609     0      0
+       baseline_popularity        827   0.2793           0.2793     0      0
+       baseline_search_top1       827   0.9129           0.9129     0      0
+       critic_only                827   0.8537           0.9323     8     73
+       full_no_memory             827   0.9371           0.9311     7      2
+       full_plus_role             827   0.9359           0.9335     6      4
+       grounded_only              827   0.9311            0.925     6      1
+       llm_no_correction          827   0.9299           0.9299     0      0
+       llm_plus_nil_rule          827    0.942           0.9299    13      3
+latin  baseline_exact_popularity    7   0.5714           0.5714     0      0
+       baseline_popularity          7   0.2857           0.2857     0      0
+       baseline_search_top1         7   0.8571           0.8571     0      0
+       critic_only                  7   0.7143           0.7143     0      0
+       full_no_memory               7   0.8571           0.7143     1      0
+       full_plus_role               7   0.7143           0.7143     0      0
+       grounded_only                7   0.7143           0.7143     0      0
+       llm_no_correction            7   0.7143           0.7143     0      0
+       llm_plus_nil_rule            7   0.7143           0.7143     0      0
+mixed  baseline_exact_popularity    4     0.75             0.75     0      0
+       baseline_popularity          4      0.5              0.5     0      0
+       baseline_search_top1         4     0.75             0.75     0      0
+       critic_only                  4      1.0              1.0     0      0
+       full_no_memory               4      1.0              1.0     0      0
+       full_plus_role               4      1.0              1.0     0      0
+       grounded_only                4      1.0              1.0     0      0
+       llm_no_correction            4      1.0              1.0     0      0
+       llm_plus_nil_rule            4      1.0              1.0     0      0
+
+=== By popularity (corrected labels) ===
+                                      n accuracy initial_accuracy fixed broken
+category run                                                                  
+head     baseline_exact_popularity  152   0.8355           0.8355     0      0
+         baseline_popularity        152   0.6053           0.6053     0      0
+         baseline_search_top1       152   0.8618           0.8618     0      0
+         critic_only                152   0.8882           0.9342     3     10
+         full_no_memory             152   0.9276           0.9211     1      0
+         full_plus_role             152   0.9211           0.9211     1      1
+         grounded_only              152   0.9211           0.9145     1      0
+         llm_no_correction          152   0.9211           0.9211     0      0
+         llm_plus_nil_rule          152   0.9211           0.9211     1      1
+nil      baseline_exact_popularity   54   0.8704           0.8704     0      0
+         baseline_popularity         54   0.9259           0.9259     0      0
+         baseline_search_top1        54   0.9259           0.9259     0      0
+         critic_only                 54   0.6481           0.9074     1     15
+         full_no_memory              54   0.8889           0.9074     1      2
+         full_plus_role              54   0.9074           0.9074     0      0
+         grounded_only               54   0.9074           0.9074     0      0
+         llm_no_correction           54   0.9074           0.9074     0      0
+         llm_plus_nil_rule           54   0.9074           0.9074     0      0
+tail     baseline_exact_popularity  378    0.881            0.881     0      0
+         baseline_popularity        378   0.1323           0.1323     0      0
+         baseline_search_top1       378   0.9286           0.9286     0      0
+         critic_only                378   0.8862           0.9471     2     25
+         full_no_memory             378   0.9603           0.9497     4      0
+         full_plus_role             378   0.9577           0.9524     3      1
+         grounded_only              378   0.9524           0.9418     4      0
+         llm_no_correction          378   0.9418           0.9418     0      0
+         llm_plus_nil_rule          378   0.9603           0.9418     8      1
+torso    baseline_exact_popularity  254   0.8346           0.8346     0      0
+         baseline_popularity        254   0.1693           0.1693     0      0
+         baseline_search_top1       254   0.9134           0.9134     0      0
+         critic_only                254   0.8268           0.9094     2     23
+         full_no_memory             254   0.9173           0.9094     2      0
+         full_plus_role             254   0.9134           0.9134     2      2
+         grounded_only              254   0.9055           0.9055     1      1
+         llm_no_correction          254   0.9173           0.9173     0      0
+         llm_plus_nil_rule          254   0.9291           0.9173     4      1
+
+=== Wrong NIL labels vs item creation date (after revision) ===
+{
+ "item existed before cutoff": 52,
+ "no QID accepted": 1
+}

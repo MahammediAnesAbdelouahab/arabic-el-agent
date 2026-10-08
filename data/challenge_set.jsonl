@@ -1,0 +1,59 @@
+{"id": "c1-0", "doc_id": "c1", "text": "هزم محمد علي جو فريزر في مباراة ملاكمة تاريخية عام 1975.", "mention": "محمد علي", "type": "PER", "gold": "Q36107", "category": "ambiguous_name"}
+{"id": "c2-1", "doc_id": "c2", "text": "حكم محمد علي مصر بين 1805 و1848 وأنشأ فيها جيشاً حديثاً.", "mention": "محمد علي", "type": "PER", "gold": "Q182781", "category": "ambiguous_name"}
+{"id": "c3-2", "doc_id": "c3", "text": "غنّى محمد عبده في حفل كبير بالرياض.", "mention": "محمد عبده", "type": "PER", "gold": "Q76796", "category": "ambiguous_name"}
+{"id": "c4-3", "doc_id": "c4", "text": "دعا محمد عبده إلى إصلاح التعليم في الأزهر.", "mention": "محمد عبده", "type": "PER", "gold": "Q311826", "category": "ambiguous_name"}
+{"id": "c5-4", "doc_id": "c5", "text": "عاد الوفد الليبي إلى طرابلس بعد انتهاء المفاوضات.", "mention": "طرابلس", "type": "LOC", "gold": "Q3579", "category": "ambiguous_name"}
+{"id": "c6-5", "doc_id": "c6", "text": "شهدت طرابلس في شمال لبنان احتجاجات واسعة.", "mention": "طرابلس", "type": "LOC", "gold": "Q168954", "category": "ambiguous_name"}
+{"id": "c7-6", "doc_id": "c7", "text": "تقع مدينة غرداية في وادي ميزاب.", "mention": "غرداية", "type": "LOC", "gold": "Q622841", "category": "ambiguous_name"}
+{"id": "c8-7", "doc_id": "c8", "text": "أعلن والي غرداية عن مشاريع تنموية في بلديات الولاية.", "mention": "غرداية", "type": "LOC", "gold": "Q17601", "category": "ambiguous_name"}
+{"id": "c9-8", "doc_id": "c9", "text": "تعادل الأهلي والزمالك في مباراة القمة.", "mention": "الأهلي", "type": "ORG", "gold": "Q223566", "category": "ambiguous_name"}
+{"id": "c9-9", "doc_id": "c9", "text": "تعادل الأهلي والزمالك في مباراة القمة.", "mention": "الزمالك", "type": "ORG", "gold": "Q286504", "category": "ambiguous_name"}
+{"id": "c10-10", "doc_id": "c10", "text": "يسكن الكاتب في حي الزمالك المطل على النيل.", "mention": "الزمالك", "type": "LOC", "gold": "Q145356", "category": "ambiguous_name"}
+{"id": "c11-11", "doc_id": "c11", "text": "انتصر صلاح الدين على الصليبيين في معركة حطين.", "mention": "صلاح الدين", "type": "PER", "gold": "Q8581", "category": "ambiguous_name"}
+{"id": "c11-12", "doc_id": "c11", "text": "انتصر صلاح الدين على الصليبيين في معركة حطين.", "mention": "معركة حطين", "type": "EVENT", "gold": "Q233568", "category": "co_mention"}
+{"id": "c12-13", "doc_id": "c12", "text": "سيطرت القوات العراقية على مناطق في محافظة صلاح الدين.", "mention": "صلاح الدين", "type": "LOC", "gold": "Q190131", "category": "ambiguous_name"}
+{"id": "c13-14", "doc_id": "c13", "text": "قاد الأمير عبد القادر المقاومة الشعبية ضد الاحتلال الفرنسي.", "mention": "الأمير عبد القادر", "type": "PER", "gold": "Q179825", "category": "ambiguous_name"}
+{"id": "c14-15", "doc_id": "c14", "text": "تخرّج أخي من جامعة الأمير عبد القادر بقسنطينة.", "mention": "جامعة الأمير عبد القادر", "type": "ORG", "gold": "Q5372520", "category": "ambiguous_name"}
+{"id": "c15-16", "doc_id": "c15", "text": "غنّت فيروز في مهرجانات بعلبك الدولية.", "mention": "فيروز", "type": "PER", "gold": "Q3247658", "category": "ambiguous_name"}
+{"id": "c15-17", "doc_id": "c15", "text": "غنّت فيروز في مهرجانات بعلبك الدولية.", "mention": "بعلبك", "type": "LOC", "gold": "Q178835", "category": "co_mention"}
+{"id": "c16-18", "doc_id": "c16", "text": "اشترت خاتماً مرصعاً بحجر الفيروز.", "mention": "الفيروز", "type": "MISC", "gold": "Q165254", "category": "ambiguous_name"}
+{"id": "c17-19", "doc_id": "c17", "text": "أعلن ماكرون عن خطة جديدة لإصلاح نظام التقاعد في فرنسا.", "mention": "ماكرون", "type": "PER", "gold": "Q3052772", "category": "partial_name"}
+{"id": "c18-20", "doc_id": "c18", "text": "قاد زيدان ريال مدريد إلى الفوز بدوري أبطال أوروبا ثلاث مرات متتالية.", "mention": "زيدان", "type": "PER", "gold": "Q1835", "category": "partial_name"}
+{"id": "c18-21", "doc_id": "c18", "text": "قاد زيدان ريال مدريد إلى الفوز بدوري أبطال أوروبا ثلاث مرات متتالية.", "mention": "ريال مدريد", "type": "ORG", "gold": "Q8682", "category": "co_mention"}
+{"id": "c19-22", "doc_id": "c19", "text": "نال محفوظ جائزة نوبل في الأدب عام 1988.", "mention": "محفوظ", "type": "PER", "gold": "Q7176", "category": "partial_name"}
+{"id": "c20-23", "doc_id": "c20", "text": "أخرج شاهين فيلم باب الحديد عام 1958.", "mention": "شاهين", "type": "PER", "gold": "Q312611", "category": "partial_name"}
+{"id": "c20-24", "doc_id": "c20", "text": "أخرج شاهين فيلم باب الحديد عام 1958.", "mention": "باب الحديد", "type": "MISC", "gold": "Q765535", "category": "ambiguous_name"}
+{"id": "c21-25", "doc_id": "c21", "text": "فاز سينر ببطولة أستراليا المفتوحة للتنس.", "mention": "سينر", "type": "PER", "gold": "Q54812588", "category": "partial_name"}
+{"id": "c22-26", "doc_id": "c22", "text": "سجّل صلاح هدفين لليفربول في المباراة الأخيرة.", "mention": "صلاح", "type": "PER", "gold": "Q1354960", "category": "partial_name"}
+{"id": "c23-27", "doc_id": "c23", "text": "تأهل محاربو الصحراء إلى نهائيات كأس أمم أفريقيا.", "mention": "محاربو الصحراء", "type": "ORG", "gold": "Q181903", "category": "nickname"}
+{"id": "c24-28", "doc_id": "c24", "text": "بلغ أسود الأطلس نصف نهائي كأس العالم 2022.", "mention": "أسود الأطلس", "type": "ORG", "gold": "Q207337", "category": "nickname"}
+{"id": "c25-29", "doc_id": "c25", "text": "سجّل البرغوث هدفاً رائعاً من ركلة حرة.", "mention": "البرغوث", "type": "PER", "gold": "Q615", "category": "nickname"}
+{"id": "c26-30", "doc_id": "c26", "text": "غنّت كوكب الشرق على مسرح الأولمبيا في باريس عام 1967.", "mention": "كوكب الشرق", "type": "PER", "gold": "Q1110560", "category": "nickname"}
+{"id": "c27-31", "doc_id": "c27", "text": "ما زالت أغاني العندليب الأسمر تُبث في الإذاعات العربية.", "mention": "العندليب الأسمر", "type": "PER", "gold": "Q307786", "category": "nickname"}
+{"id": "c28-32", "doc_id": "c28", "text": "انضم الدون إلى نادي النصر السعودي.", "mention": "الدون", "type": "PER", "gold": "Q11571", "category": "nickname"}
+{"id": "c28-33", "doc_id": "c28", "text": "انضم الدون إلى نادي النصر السعودي.", "mention": "النصر", "type": "ORG", "gold": "Q482764", "category": "ambiguous_name"}
+{"id": "c29-34", "doc_id": "c29", "text": "احتفل بلد المليون شهيد بعيد الاستقلال في الخامس من يوليو.", "mention": "بلد المليون شهيد", "type": "GPE", "gold": "Q262", "category": "nickname"}
+{"id": "c30-35", "doc_id": "c30", "text": "سافر الطالب إلى عاصمة الضباب لإكمال دراسته.", "mention": "عاصمة الضباب", "type": "GPE", "gold": "Q84", "category": "nickname"}
+{"id": "c31-36", "doc_id": "c31", "text": "فازت الجزائر على السنغال في نهائي كأس أمم أفريقيا 2019.", "mention": "الجزائر", "type": "GPE", "gold": "Q181903", "category": "metonymy"}
+{"id": "c32-37", "doc_id": "c32", "text": "هزم المغرب البرتغال في ربع نهائي مونديال قطر.", "mention": "المغرب", "type": "GPE", "gold": "Q207337", "category": "metonymy"}
+{"id": "c33-38", "doc_id": "c33", "text": "Messi marka but zwin m3a PSG lbare7", "mention": "Messi", "type": "PER", "gold": "Q615", "category": "dialect_arabizi"}
+{"id": "c33-39", "doc_id": "c33", "text": "Messi marka but zwin m3a PSG lbare7", "mention": "PSG", "type": "ORG", "gold": "Q483020", "category": "dialect_arabizi"}
+{"id": "c34-40", "doc_id": "c34", "text": "خويا راهو يخدم في سوناطراك فحاسي مسعود", "mention": "سوناطراك", "type": "ORG", "gold": "Q1090717", "category": "dialect_arabizi"}
+{"id": "c35-41", "doc_id": "c35", "text": "إمبارح روحنا الاستاد واتفرجنا على ماتش الأهلي", "mention": "الأهلي", "type": "ORG", "gold": "Q223566", "category": "dialect_arabizi"}
+{"id": "c36-42", "doc_id": "c36", "text": "الهلال اليوم لعب زين وغلب العين", "mention": "الهلال", "type": "ORG", "gold": "Q73965", "category": "dialect_arabizi"}
+{"id": "c36-43", "doc_id": "c36", "text": "الهلال اليوم لعب زين وغلب العين", "mention": "العين", "type": "ORG", "gold": "Q812720", "category": "dialect_arabizi"}
+{"id": "c37-44", "doc_id": "c37", "text": "في البطولة الجزائرية، الوفاق ربح على الشبيبة البارح", "mention": "الوفاق", "type": "ORG", "gold": "Q1059484", "category": "dialect_arabizi"}
+{"id": "c37-45", "doc_id": "c37", "text": "في البطولة الجزائرية، الوفاق ربح على الشبيبة البارح", "mention": "الشبيبة", "type": "ORG", "gold": "Q862218", "category": "dialect_arabizi"}
+{"id": "c38-46", "doc_id": "c38", "text": "تأثر جوته بالشعر العربي والفارسي.", "mention": "جوته", "type": "PER", "gold": "Q5879", "category": "transliteration"}
+{"id": "c39-47", "doc_id": "c39", "text": "تُعد رواية الجريمة والعقاب لدستويفسكي من أشهر الروايات الروسية.", "mention": "دستويفسكي", "type": "PER", "gold": "Q991", "category": "transliteration"}
+{"id": "c39-48", "doc_id": "c39", "text": "تُعد رواية الجريمة والعقاب لدستويفسكي من أشهر الروايات الروسية.", "mention": "الجريمة والعقاب", "type": "MISC", "gold": "Q165318", "category": "co_mention"}
+{"id": "c40-49", "doc_id": "c40", "text": "طوّر فريق ديب مايند نظام ألفا فولد للتنبؤ ببنية البروتينات.", "mention": "ديب مايند", "type": "ORG", "gold": "Q15733006", "category": "transliteration"}
+{"id": "c40-50", "doc_id": "c40", "text": "طوّر فريق ديب مايند نظام ألفا فولد للتنبؤ ببنية البروتينات.", "mention": "ألفا فولد", "type": "MISC", "gold": "Q60827595", "category": "transliteration"}
+{"id": "c41-51", "doc_id": "c41", "text": "رسم الإدريسي خريطة للعالم بطلب من ملك صقلية روجر الثاني.", "mention": "الإدريسي", "type": "PER", "gold": "Q173441", "category": "historical_nisba"}
+{"id": "c41-52", "doc_id": "c41", "text": "رسم الإدريسي خريطة للعالم بطلب من ملك صقلية روجر الثاني.", "mention": "روجر الثاني", "type": "PER", "gold": "Q193901", "category": "co_mention"}
+{"id": "c42-53", "doc_id": "c42", "text": "وضع الخوارزمي أسس علم الجبر.", "mention": "الخوارزمي", "type": "PER", "gold": "Q9038", "category": "historical_nisba"}
+{"id": "c43-54", "doc_id": "c43", "text": "قال جاري أحمد زويل إن سيارته تعطلت أمس.", "mention": "أحمد زويل", "type": "PER", "gold": "NIL", "category": "nil"}
+{"id": "c44-55", "doc_id": "c44", "text": "سمّى محمد ابنه صلاح الدين تيمناً بالقائد التاريخي.", "mention": "صلاح الدين", "type": "PER", "gold": "NIL", "category": "nil"}
+{"id": "c45-56", "doc_id": "c45", "text": "قال الأستاذ رضوان بلقاسمي، مدير المدرسة، إن الامتحانات ستبدأ يوم الأحد.", "mention": "رضوان بلقاسمي", "type": "PER", "gold": "NIL", "category": "nil"}
+{"id": "c46-57", "doc_id": "c46", "text": "افتتح مطعم الياسمين فرعاً جديداً في الحي.", "mention": "الياسمين", "type": "ORG", "gold": "NIL", "category": "nil"}
+{"id": "c47-58", "doc_id": "c47", "text": "أعلنت شركة النور للمقاولات عن توظيف عمال جدد.", "mention": "شركة النور للمقاولات", "type": "ORG", "gold": "NIL", "category": "nil"}

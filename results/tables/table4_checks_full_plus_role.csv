@@ -1,0 +1,6 @@
+,fired,fired_first,changed_answer,fixed,broken,kept_right,still_wrong,fix_rate,break_rate
+NIL,29,18,12,6,3,9,11,0.207,0.103
+COHERENCE,18,18,1,0,0,16,2,0.0,0.0
+TYPE,13,12,1,0,1,11,1,0.0,0.077
+ROLE,4,4,4,0,4,0,0,0.0,1.0
+LABEL,3,0,0,0,0,2,1,0.0,0.0

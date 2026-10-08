@@ -1,0 +1,6 @@
+,rows,judged,wrong,wrong_rate,ci95_low,ci95_high
+dates labeled NIL,51,51,51,1.0,0.93,1.0
+other NIL labels,4,3,2,0.6667,0.2077,0.9385
+other disagreements,651,640,39,0.0609,0.0449,0.0822
+audit of agreements,40,40,0,0.0,0.0,0.0876
+test set without dates (lower bound),,683,41,,,

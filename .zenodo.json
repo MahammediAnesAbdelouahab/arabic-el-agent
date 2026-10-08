@@ -1,0 +1,47 @@
+{
+  "title": "Code and data for: Evidence, Not Doubt: Self-Verification in LLM-Based Arabic Entity Linking to Wikidata",
+  "upload_type": "software",
+  "access_right": "open",
+  "license": "mit",
+  "version": "1.1.1",
+  "description": "An LLM agent that links Arabic entity mentions to Wikidata and checks its answers, mostly against Wikidata, before accepting them; with every comparison system of the paper (an ungrounded LLM critic, a fixed NIL rule, retrieval baselines), all run traces, the review tools, and a blind-reviewed, corrected ELNER-DZ test sample. The data in data/ and results/ is licensed under CC BY 4.0 and derived from ELNER-DZ.",
+  "creators": [
+    {
+      "name": "Mahammedi, Anes Abdelouahab",
+      "affiliation": "EEDIS Laboratory, Department of Computer Science, University of Naâma, Naâma, Algeria",
+      "orcid": "0009-0000-6765-6870"
+    },
+    {
+      "name": "Bouziane, Abdelghani",
+      "affiliation": "EEDIS Laboratory, Department of Computer Science, University of Naâma, Naâma, Algeria",
+      "orcid": "0000-0002-8583-3858"
+    },
+    {
+      "name": "Yahiaoui, Yasser",
+      "affiliation": "EEDIS Laboratory, Department of Computer Science, University of Naâma, Naâma, Algeria",
+      "orcid": "0009-0006-4435-4734"
+    },
+    {
+      "name": "Bouchiha, Djelloul",
+      "affiliation": "EEDIS Laboratory, Department of Computer Science, University of Naâma, Naâma, Algeria",
+      "orcid": "0000-0001-7314-4329"
+    }
+  ],
+  "keywords": [
+    "entity linking",
+    "Wikidata",
+    "Arabic",
+    "Algerian Arabic",
+    "self-verification",
+    "LLM",
+    "label noise",
+    "NLP"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://doi.org/10.5281/zenodo.15798592",
+      "relation": "isDerivedFrom",
+      "resource_type": "dataset"
+    }
+  ]
+}

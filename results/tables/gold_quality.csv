@@ -1,0 +1,4 @@
+,rows,reviewed,gold wrong,gold wrong rate,95% CI
+gold NIL,55,54,53,0.9815,"(0.9023, 0.9967)"
+disagreement,651,640,39,0.0609,"(0.0449, 0.0822)"
+audit,40,40,0,0.0,"(0.0, 0.0876)"

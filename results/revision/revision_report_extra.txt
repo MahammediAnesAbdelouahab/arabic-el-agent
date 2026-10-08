@@ -1,0 +1,166 @@
+elagent 1.1.1 | 2026-10-06 00:42
+
+=== Corpus profiles (full = Hugging Face; read = your Zenodo copy; sample = our 1,000 sentences) ===
+                                           full corpus    read part  our sample
+sentences                                 2.075148e+06  580916.0000    992.0000
+mentions                                  1.978185e+06  619017.0000   1061.0000
+share of mentions labeled NIL             5.370000e-02       0.0647      0.0622
+share of mentions in Latin script         5.686000e-01       0.0138      0.0132
+share of sentences without Arabic script  5.891000e-01       0.0025      0.0020
+mean sentence length (chars)              4.610000e+01      42.4000     42.0000
+mentions per sentence with mentions       1.057000e+00       1.0720         NaN
+type NORP                                 1.219000e-01       0.1377      0.1254
+type LANG                                 1.146000e-01       0.1370      0.1301
+type EVENT                                1.134000e-01       0.1478      0.1574
+type LAW                                  1.114000e-01       0.1346      0.1188
+type MISC                                 1.030000e-01       0.0479      0.0481
+type PROD                                 1.023000e-01       0.0447      0.0377
+type PER                                  1.010000e-01       0.1298      0.1385
+type ORG                                  9.190000e-02       0.0259      0.0264
+type LOC                                  8.950000e-02       0.1370      0.1593
+type DATE                                 5.110000e-02       0.0577      0.0584
+
+=== Coverage of your copy ===
+{
+ "records read": 580916,
+ "records in full corpus": 2075148,
+ "coverage": 0.2799
+}
+
+=== Our sample in the Hugging Face version ===
+{
+ "sampled sentences": 992,
+ "found by id": 992,
+ "identical text": 992
+}
+
+=== Test mentions by type ===
+       mentions  year  gold_nil  reviewed  unclear  gold_wrong
+type                                                          
+DATE         51    51        51        51        0          51
+EVENT       136     0         0       134        0           0
+LANG        104     0         0        78        1           4
+LAW         102     0         0        92        0           6
+LOC         138     0         0       108        3          11
+MISC         40     0         0        37        2           5
+NORP        109     0         1        99        4           7
+ORG          23     0         3        13        2           2
+PER         113     0         0        93        0           4
+PROD         34     0         0        29        0           2
+
+=== Wrong labels by original label (gold_nil), type and year ===
+   gold_nil  type   year   n
+0     False  LANG  False   4
+1     False   LAW  False   6
+2     False   LOC  False  11
+3     False  MISC  False   5
+4     False  NORP  False   7
+5     False   PER  False   4
+6     False  PROD  False   2
+7      True  DATE   True  51
+8      True   ORG  False   2
+
+=== Corrected labels, all mentions ===
+                        n accuracy initial_accuracy fixed broken sign_test_p wins_vs_ref losses_vs_ref  p_vs_ref  diff_vs_ref_95CI avg_llm_calls
+baseline_search_top1  838   0.9117           0.9117     0      0         1.0          31            45  0.135385  [-0.037, +0.004]           0.0
+llm_no_correction     838   0.9284           0.9284     0      0         1.0           0             0       1.0  [+0.000, +0.000]        1.1993
+llm_plus_nil_rule     838   0.9403           0.9284    13      3    0.021271          13             3  0.021271  [+0.004, +0.021]        1.1993
+full_no_memory        838   0.9368           0.9296     8      2    0.109375          12             5  0.143463  [-0.001, +0.018]        1.3302
+full_no_memory@r2     838   0.9344           0.9284     7      2    0.179688           9             4  0.266846  [-0.002, +0.014]        1.3325
+grounded_only         838   0.9296           0.9236     6      1       0.125           7             6       1.0  [-0.007, +0.011]        1.2411
+critic_only           838   0.8532           0.9308     8     73         0.0           9            72       0.0  [-0.097, -0.055]        2.6026
+full_plus_role        838   0.9344            0.932     6      4    0.753906          12             7  0.359283  [-0.004, +0.017]        1.5115
+
+=== Qwen, corrected labels, all mentions ===
+                                                n accuracy initial_accuracy fixed broken sign_test_p wins_vs_ref losses_vs_ref p_vs_ref  diff_vs_ref_95CI avg_llm_calls
+full_no_memory@qwen3-4b-instruct-2507-q4_K_M  838   0.9045           0.8962    11      4    0.118469           0             0      1.0  [+0.000, +0.000]        1.2765
+
+=== Corrected labels, without DATE/year mentions ===
+                        n accuracy initial_accuracy fixed broken sign_test_p wins_vs_ref losses_vs_ref  p_vs_ref  diff_vs_ref_95CI avg_llm_calls
+baseline_search_top1  787   0.9085           0.9085     0      0         1.0          31            45  0.135385  [-0.039, +0.004]           0.0
+llm_no_correction     787   0.9263           0.9263     0      0         1.0           0             0       1.0  [+0.000, +0.000]        1.2122
+llm_plus_nil_rule     787    0.939           0.9263    13      3    0.021271          13             3  0.021271  [+0.004, +0.023]        1.2122
+full_no_memory        787   0.9377           0.9276     8      0    0.007812          12             3  0.035156  [+0.003, +0.022]        1.3001
+full_no_memory@r2     787   0.9352           0.9263     7      0    0.015625           9             2   0.06543  [+0.001, +0.018]        1.2963
+grounded_only         787   0.9276           0.9212     6      1       0.125           7             6       1.0  [-0.008, +0.010]        1.2567
+critic_only           787   0.8653           0.9288     8     58         0.0           9            57       0.0  [-0.081, -0.042]        2.5286
+full_plus_role        787   0.9327           0.9301     6      4    0.753906          12             7  0.359283  [-0.004, +0.017]        1.4856
+
+=== Qwen, corrected labels, without DATE/year mentions ===
+                                                n accuracy initial_accuracy fixed broken sign_test_p wins_vs_ref losses_vs_ref p_vs_ref  diff_vs_ref_95CI avg_llm_calls
+full_no_memory@qwen3-4b-instruct-2507-q4_K_M  787   0.9034           0.8983     8      4    0.387695           0             0      1.0  [+0.000, +0.000]        1.2569
+
+=== What each check did in full_no_memory, without DATE/year mentions ===
+           fired  fired_first  changed_answer  fixed  broken  kept_right  still_wrong  fix_rate  break_rate
+NIL           19           18              10      7       0           3            9     0.368         0.0
+TYPE          12           12               0      0       0          11            1     0.000         0.0
+COHERENCE      5            5               2      1       0           3            1     0.200         0.0
+LABEL          3            0               0      0       0           2            1     0.000         0.0
+
+=== Every repair and break (corrected labels) ===
+                                             run    change        id                         mention  type    initial       final           accepted
+0                                 full_no_memory  repaired  278095-0                          تبهوين   LOC        NIL   Q23783266          Q23783266
+1                                 full_no_memory  repaired  153805-0     الفتح الإسلامي لمحافظة فارس   LAW        NIL   Q18207020          Q18207020
+2                                 full_no_memory  repaired  151526-0           قانون الخدمة البريدية   LAW        NIL   Q16983692          Q16983692
+3                                 full_no_memory  repaired     406-2                          france   ORG     Q47774        Q142               Q142
+4                                 full_no_memory  repaired  364813-0                        مون شيرى  PROD        NIL    Q1588515           Q1588515
+5                                 full_no_memory     broke  454547-1                            2015  DATE      Q2002   Q20646864              Q2002
+6                                 full_no_memory  repaired  162979-0              الغزو الآشوري لمصر   LAW        NIL   Q97357417          Q97357417
+7                                 full_no_memory  repaired  197941-0                          قيرغيز  NORP        NIL     Q484479            Q484479
+8                                 full_no_memory     broke  481232-1                            2017  DATE     Q25290   Q26302816             Q25290
+9                                 full_no_memory  repaired  169356-0                      رصاص مطاطي   LAW        NIL     Q913345            Q913345
+10                             full_no_memory@r2  repaired  278095-0                          تبهوين   LOC        NIL   Q23783266          Q23783266
+11                             full_no_memory@r2  repaired  153805-0     الفتح الإسلامي لمحافظة فارس   LAW        NIL   Q18207020          Q18207020
+12                             full_no_memory@r2  repaired  301431-0                          الحاسي   LOC        NIL    Q3049963  Q3049956|Q3049963
+13                             full_no_memory@r2  repaired  162979-0              الغزو الآشوري لمصر   LAW        NIL   Q97357417          Q97357417
+14                             full_no_memory@r2  repaired  293124-0                  دائرة المحمدية   LOC        NIL    Q3019814           Q3019814
+15                             full_no_memory@r2     broke  529474-1                            2018  DATE     Q25291   Q47507836             Q25291
+16                             full_no_memory@r2  repaired  250495-0  الدراسات الوراثية على المغاربة  NORP        NIL   Q17011475          Q17011475
+17                             full_no_memory@r2     broke  486516-1                            2023  DATE     Q49622  Q107570749             Q49622
+18                             full_no_memory@r2  repaired  169356-0                      رصاص مطاطي   LAW        NIL     Q913345            Q913345
+19                                 grounded_only  repaired  416500-0                         ياسمينة   PER        NIL    Q3571907           Q3571907
+20                                 grounded_only  repaired  432008-0                    إسحاق الفاسي   PER        NIL     Q523491            Q523491
+21                                 grounded_only  repaired  153805-0     الفتح الإسلامي لمحافظة فارس   LAW        NIL   Q18207020          Q18207020
+22                                 grounded_only  repaired  162979-0              الغزو الآشوري لمصر   LAW        NIL   Q97357417          Q97357417
+23                                 grounded_only  repaired  197941-0                          قيرغيز  NORP        NIL     Q484479            Q484479
+24                                 grounded_only  repaired  250495-0  الدراسات الوراثية على المغاربة  NORP        NIL   Q17011475          Q17011475
+25                                 grounded_only     broke  342814-0                        كور آي 5  PROD        NIL    Q1044821                NIL
+26                             llm_plus_nil_rule  repaired  416500-0                         ياسمينة   PER        NIL    Q3571907           Q3571907
+27                             llm_plus_nil_rule  repaired  278095-0                          تبهوين   LOC        NIL   Q23783266          Q23783266
+28                             llm_plus_nil_rule  repaired  153805-0     الفتح الإسلامي لمحافظة فارس   LAW        NIL   Q18207020          Q18207020
+29                             llm_plus_nil_rule  repaired  151526-0           قانون الخدمة البريدية   LAW        NIL   Q16983692          Q16983692
+30                             llm_plus_nil_rule  repaired  376737-0                           شريفة   PER        NIL    Q2972083           Q2972083
+31                             llm_plus_nil_rule  repaired  301431-0                          الحاسي   LOC        NIL    Q3049963  Q3049956|Q3049963
+32                             llm_plus_nil_rule  repaired  364813-0                        مون شيرى  PROD        NIL    Q1588515           Q1588515
+33                             llm_plus_nil_rule  repaired  349973-0                             زيل  PROD        NIL     Q638156  Q22907300|Q638156
+34                             llm_plus_nil_rule     broke  274676-0              كومنز:أطلس الجزائر   LOC        NIL     Q130135                NIL
+35                             llm_plus_nil_rule  repaired  162979-0              الغزو الآشوري لمصر   LAW        NIL   Q97357417          Q97357417
+36                             llm_plus_nil_rule  repaired  293124-0                  دائرة المحمدية   LOC        NIL    Q3019814           Q3019814
+37                             llm_plus_nil_rule  repaired  197941-0                          قيرغيز  NORP        NIL     Q484479            Q484479
+38                             llm_plus_nil_rule  repaired  250495-0  الدراسات الوراثية على المغاربة  NORP        NIL   Q17011475          Q17011475
+39                             llm_plus_nil_rule     broke  342814-0                        كور آي 5  PROD        NIL    Q1044821                NIL
+40                             llm_plus_nil_rule     broke  247330-0                           بياري  NORP        NIL   Q13562131                NIL
+41                             llm_plus_nil_rule  repaired  169356-0                      رصاص مطاطي   LAW        NIL     Q913345            Q913345
+42  full_no_memory@qwen3-4b-instruct-2507-q4_K_M  repaired  416500-0                         ياسمينة   PER  Q19968738    Q3571907           Q3571907
+43  full_no_memory@qwen3-4b-instruct-2507-q4_K_M     broke  340049-0                   جامعه أوبسالا   LOC    Q185246         NIL            Q185246
+44  full_no_memory@qwen3-4b-instruct-2507-q4_K_M  repaired  249283-0                       ويلياكالى  NORP   Q1621926   Q16211926          Q16211926
+45  full_no_memory@qwen3-4b-instruct-2507-q4_K_M     broke  342018-0                   جامعة سيملفيس   LOC    Q277681         NIL            Q277681
+46  full_no_memory@qwen3-4b-instruct-2507-q4_K_M  repaired  343962-0                           ديبال  PROD  Q11287495  Q112874951         Q112874951
+47  full_no_memory@qwen3-4b-instruct-2507-q4_K_M     broke  341689-0                   جامعة أورليان   LOC     Q13334    Q3143487             Q13334
+48  full_no_memory@qwen3-4b-instruct-2507-q4_K_M  repaired  316475-0                        يوتوبوري   LOC        NIL      Q25287             Q25287
+49  full_no_memory@qwen3-4b-instruct-2507-q4_K_M  repaired  468049-1                            1983  DATE        NIL       Q2434              Q2434
+50  full_no_memory@qwen3-4b-instruct-2507-q4_K_M  repaired  410806-0                       عيد شريفي   PER  Q15109140   Q12228888          Q12228888
+51  full_no_memory@qwen3-4b-instruct-2507-q4_K_M  repaired  390207-0               عبد المالك سلاحجى   PER   Q1762087   Q17620871          Q17620871
+52  full_no_memory@qwen3-4b-instruct-2507-q4_K_M  repaired  444550-0               عبد القادر بوسعيد   PER  Q10646643  Q106466434         Q106466434
+53  full_no_memory@qwen3-4b-instruct-2507-q4_K_M     broke  339694-0       جامعة بابوا جينيا الجديده   LOC    Q780975      Q40285            Q780975
+54  full_no_memory@qwen3-4b-instruct-2507-q4_K_M  repaired  223577-0                        كالتشاكي  NORP        NIL    Q2933667           Q2933667
+55  full_no_memory@qwen3-4b-instruct-2507-q4_K_M  repaired  459206-1                            1990  DATE        NIL       Q2064              Q2064
+56  full_no_memory@qwen3-4b-instruct-2507-q4_K_M  repaired  508293-1                            2017  DATE        NIL      Q25290             Q25290
+
+=== critic_only: repairs and breaks by kind (corrected labels) ===
+change    kind            
+broke     QID -> NIL          55
+          QID -> other QID    18
+repaired  NIL -> QID           3
+          QID -> NIL           4
+          QID -> other QID     1

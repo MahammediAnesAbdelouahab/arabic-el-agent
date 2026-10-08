@@ -1,0 +1,10 @@
+,n,initial_accuracy
+critic_only,838,0.9308
+full_no_memory,838,0.9296
+full_no_memory@r2,838,0.9284
+full_plus_role,838,0.932
+grounded_only,838,0.9236
+llm_no_correction,838,0.9284
+llm_no_correction@r2,838,0.9284
+(mean),,0.9287
+(sd),,0.0027

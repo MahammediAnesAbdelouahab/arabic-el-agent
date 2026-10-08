@@ -1,0 +1,10 @@
+The data in `data/` and `results/` is licensed under the Creative Commons Attribution 4.0
+International License (CC BY 4.0): https://creativecommons.org/licenses/by/4.0/
+
+Copyright (c) 2026 Anes Abdelouahab Mahammedi, Abdelghani Bouziane, Yasser Yahiaoui, Djelloul Bouchiha
+
+`data/elner_dz_test_corrected.jsonl`, `results/runs/elner/` and `results/review/` are derived from
+ELNER-DZ (Bouguettoucha, H. H., & Djouablia, I. (2025). ELNER-DZ: A dataset for named entity recognition and entity linking in Algerian Arabic dialect (Version 2) [Data set]. Zenodo. https://doi.org/10.5281/zenodo.15798592), licensed under CC BY 4.0.
+Changes: a random sample of sentences was taken, mentions were linked by our systems, and the labels of the
+mentions where any answer of any system disagreed with ELNER-DZ were manually reviewed and corrected (see data/README.md).
+`data/challenge_set.jsonl` was written by the authors.
