@@ -3,6 +3,7 @@ message: "If you use this software or data, please cite it as below."
 title: "Code and data for: Evidence, Not Doubt: Self-Verification in LLM-Based Arabic Entity Linking to Wikidata"
 version: "1.1.1"
 date-released: "2026-10-08"
+doi: "10.5281/zenodo.23239230"
 license: MIT
 repository-code: "https://github.com/MahammediAnesAbdelouahab/arabic-el-agent"
 type: software
